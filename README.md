@@ -78,7 +78,7 @@ The script is called automatically by the device when playing videos. You can al
 - **POWER**: Exit MPV
 - **Q**: Exit MPV and remember playback position
 
-### Combination Keys (M键为Ctrl)
+### Combination Keys (M key as Ctrl)
 - **Ctrl+UP**: Seek +600 seconds (10 minutes)
 - **Ctrl+DOWN**: Seek -600 seconds (10 minutes)
 
