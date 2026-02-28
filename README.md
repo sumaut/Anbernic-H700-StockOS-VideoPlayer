@@ -1,6 +1,6 @@
 # FFplay to MPV Script
 
-This script converts the original FFplay.sh script to use MPV instead of FFplay, with custom key mappings optimized for handheld devices.此脚本将原始的 FFplay.sh 脚本转换为使用 MPV 而非 FFplay，并针对手持设备优化了自定义按键映射。
+This script converts the original FFplay.sh script to use MPV instead of FFplay, with custom key mappings optimized for handheld devices.
 
 ## Features
 
@@ -13,6 +13,8 @@ This script converts the original FFplay.sh script to use MPV instead of FFplay,
 
 ## Installation
 
+### Option 1: Transfer from PC to Device
+
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/ffplayer-to-mpv.git
@@ -24,16 +26,42 @@ This script converts the original FFplay.sh script to use MPV instead of FFplay,
    chmod +x FFplay.sh
    ```
 
-3. **Backup original script**:
+3. **Connect to the device** (default username and password: root):
+   ```bash
+   ssh root@device-ip-address
+   ```
+   *Note: You can find the device's IP address in the network settings page on the device.*
+
+4. **Backup original script**:
    ```bash
    # On the device
    cp /mnt/vendor/bin/video/FFplay.sh /mnt/vendor/bin/video/FFplay.sh.bak
    ```
 
-4. **Copy the script to device**:
+5. **Transfer the script to device**:
    ```bash
-   # Transfer the script to your device and then run:
-   cp FFplay.sh /mnt/vendor/bin/video/
+   # From your PC
+   scp FFplay.sh root@device-ip-address:/mnt/vendor/bin/video/
+   ```
+
+### Option 2: Download directly on Device
+
+1. **Connect to the device** (default username and password: root):
+   ```bash
+   ssh root@device-ip-address
+   ```
+   *Note: You can find the device's IP address in the network settings page on the device.*
+
+2. **Backup original script**:
+   ```bash
+   cp /mnt/vendor/bin/video/FFplay.sh /mnt/vendor/bin/video/FFplay.sh.bak
+   ```
+
+3. **Download the script**:
+   ```bash
+   cd /mnt/vendor/bin/video/
+   wget https://raw.githubusercontent.com/your-username/ffplayer-to-mpv/main/FFplay.sh
+   chmod +x FFplay.sh
    ```
 
 ## Note
@@ -55,32 +83,42 @@ The script is called automatically by the device when playing videos. You can al
 ## Key Mappings
 
 ### Basic Controls
-- **START** (f): Play/Pause
-- **SELECT** (l): Mute/Unmute
-- **A** (p): Cycle display modes (fullscreen/stretch/crop)
-- **B** (s): Screenshot
-- **X** (PGDWN): Cycle audio tracks
-- **Y** (PGUP): Cycle subtitles
+| Button | Key | Function |
+|--------|-----|----------|
+| START | f | Play/Pause |
+| SELECT | l | Mute/Unmute |
+| A | p | Cycle display modes (fullscreen/stretch/crop) |
+| B | s | Screenshot |
+| X | PGDWN | Cycle audio tracks |
+| Y | PGUP | Cycle subtitles |
 
 ### Directional Pad
-- **↑** (UP): Volume +5
-- **↓** (DOWN): Volume -5
-- **←** (LEFT): Seek -10 seconds
-- **→** (RIGHT): Seek +10 seconds
+| Button | Key | Function |
+|--------|-----|----------|
+| ↑ | UP | Volume +5 |
+| ↓ | DOWN | Volume -5 |
+| ← | LEFT | Seek -10 seconds |
+| → | RIGHT | Seek +10 seconds |
 
 ### Shoulder Buttons
-- **L** (a): Decrease playback speed by 0.1
-- **R** (c): Increase playback speed by 0.1
-- **L2** (v): Show detailed video information
-- **R2** (t): Cycle OSD level
+| Button | Key | Function |
+|--------|-----|----------|
+| L | a | Decrease playback speed by 0.1 |
+| R | c | Increase playback speed by 0.1 |
+| L2 | v | Show detailed video information |
+| R2 | t | Cycle OSD level |
 
 ### Power Button
-- **POWER**: Exit MPV
-- **Q**: Exit MPV and remember playback position
+| Button | Key | Function |
+|--------|-----|----------|
+| POWER | POWER | Exit MPV |
+| - | Q | Exit MPV and remember playback position |
 
 ### Combination Keys (M key as Ctrl)
-- **Ctrl+UP**: Seek +600 seconds (10 minutes)
-- **Ctrl+DOWN**: Seek -600 seconds (10 minutes)
+| Button | Key | Function |
+|--------|-----|----------|
+| Ctrl+↑ | Ctrl+UP | Seek +600 seconds (10 minutes) |
+| Ctrl+↓ | Ctrl+DOWN | Seek -600 seconds (10 minutes) |
 
 ## Configuration
 
