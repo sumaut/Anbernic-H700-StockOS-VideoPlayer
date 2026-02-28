@@ -24,16 +24,29 @@ This script converts the original FFplay.sh script to use MPV instead of FFplay,
    chmod +x FFplay.sh
    ```
 
-3. **Install MPV**:
-   - On Ubuntu/Debian: `sudo apt install mpv`
-   - On Arch Linux: `sudo pacman -S mpv`
-   - On macOS: `brew install mpv`
-   - On Windows: Download from [mpv.io](https://mpv.io)
+3. **Backup original script**:
+   ```bash
+   # On the device
+   cp /mnt/vendor/bin/video/FFplay.sh /mnt/vendor/bin/video/FFplay.sh.bak
+   ```
+
+4. **Copy the script to device**:
+   ```bash
+   # Transfer the script to your device and then run:
+   cp FFplay.sh /mnt/vendor/bin/video/
+   ```
+
+## Note
+- The device already has MPV pre-installed, so no need to install it separately
+- Always backup the original FFplay.sh before replacing it
+- The script is designed to work with the device's existing hardware and key mappings
 
 ## Usage
 
+The script is called automatically by the device when playing videos. You can also run it manually:
+
 ```bash
-./FFplay.sh <video_file> [hdmi]
+/mnt/vendor/bin/video/FFplay.sh <video_file> [hdmi]
 ```
 
 - `<video_file>`: Path to the video file you want to play
