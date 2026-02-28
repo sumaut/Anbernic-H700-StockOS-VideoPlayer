@@ -1,6 +1,6 @@
 # FFplay to MPV Script
 
-This script converts the original FFplay.sh script to use MPV instead of FFplay, with custom key mappings optimized for handheld devices.
+This script converts the original FFplay.sh script to use MPV instead of FFplay, with custom key mappings optimized for handheld devices.此脚本将原始的 FFplay.sh 脚本转换为使用 MPV 而非 FFplay，并针对手持设备优化了自定义按键映射。
 
 ## Features
 
@@ -9,7 +9,7 @@ This script converts the original FFplay.sh script to use MPV instead of FFplay,
 - **Error Logging**: Detailed logs for debugging
 - **Display Mode Switching**: Support for different display modes (fullscreen, stretch, crop)
 - **Playback Speed Control**: Adjust playback speed with shoulder buttons
-- **Remember Position**: Save playback position when exiting
+- **Remember Position**: Save playback position when exiting (Not fully implemented yet, help wanted)
 
 ## Installation
 
