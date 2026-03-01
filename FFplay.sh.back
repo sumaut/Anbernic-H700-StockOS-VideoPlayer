@@ -1,0 +1,28 @@
+#!/bin/bash
+PROG_DIR=$(dirname "$0")
+
+if [ -f "$1" ]; then
+	VIDEO="$1"
+else
+	echo "---no video file, and exit --"
+	exit 0
+fi
+
+#echo "---${PROG_DIR}--"
+
+cd $PROG_DIR
+
+if [ x"$2" == x"hdmi" ]
+then
+	
+    SDL_NOMOUSE=1 SDL_AUDIO_CHANNELS=2 AUDIODEV=hw:2,0 \
+	./ffplay -fs -autoexit -vf scale=640:-2 -i "${VIDEO}"
+	
+else
+	
+	#HOME=${PROG_DIR} SDL_NOMOUSE=1 SDL_AUDIO_CHANNELS=2 
+	SDL_NOMOUSE=1 SDL_AUDIO_CHANNELS=2 \
+	./ffplay -fs -autoexit -vf scale=640:-2 -i "${VIDEO}"
+fi
+
+sync
